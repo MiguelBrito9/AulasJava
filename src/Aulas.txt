@@ -1,14 +1,19 @@
 tipos de dados
-if elses
+condicoes
 ciclos
 métodos
 classes
-github
+arrayList
+
 ------------------------------------------
+github
+try catch (error handling)
 tipos de dados genéricos
 heranca/polimorfismo em classes. ANIMAL, cao, gato (extends)
-tipo de dados generico
 ------------------------------------------
+LocalDate
+Enums
 comandos no terminal
 interfaces (implements)
 threads
+Map/Set
