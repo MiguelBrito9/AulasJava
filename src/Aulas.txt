@@ -1,0 +1,14 @@
+tipos de dados
+if elses
+ciclos
+métodos
+classes
+github
+------------------------------------------
+tipos de dados genéricos
+heranca/polimorfismo em classes. ANIMAL, cao, gato (extends)
+tipo de dados generico
+------------------------------------------
+comandos no terminal
+interfaces (implements)
+threads
