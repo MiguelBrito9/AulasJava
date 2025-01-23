@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 public class Pessoa{
 
-     String nome= "ze";
+    private String nome;
     private int idade;
     private LocalDate dataNascimento;
     private int telefone=123;
-    public static int cont = 0;
+    private static int cont = 0;
 
     public Pessoa(String nome, int i, int telefone) {
         this.telefone = telefone;

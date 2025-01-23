@@ -1,9 +1,11 @@
 Criar o package GestaoImobiliaria
-Criar a class Quarto com ArrayList<Pessoa>, enum TipoQuarto
+Criar a class Quarto com ArrayList<Pessoa>, enum TipoQuarto, disponibilidade
 Usando heranca cria as classes Alojamento, Hotel e Alojamento Local
-Alojamento: Map<numero do quarto, disponibilidade>, nome, localizacao
+Alojamento: Map<numero do quarto, disponibilidade>, nome
 Hotel: boolean roomService, n. piscinas
-Alojamento local: enum tipo de habitacao
+Alojamento local: enum tipo de habitacao, localizacao
+
+-----------------------------------------------------------
 
 -----------------------------------------------------------
 Fazer um menu para gerir as pessoas nos Hoteis.

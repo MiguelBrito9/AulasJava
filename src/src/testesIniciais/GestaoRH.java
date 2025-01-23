@@ -4,9 +4,6 @@ import src.classesReutilizaveis.Aluno;
 import src.classesReutilizaveis.Pessoa;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 import static java.lang.System.out;
 
 public class GestaoRH {
