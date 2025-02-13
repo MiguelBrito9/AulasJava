@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class Alojamento {
 
-    public  Map <Integer,Quarto> listaDeQuartos = new HashMap<>();
+    public Map <Integer,Quarto> listaDeQuartos = new HashMap<>();
     public String nome="";
 
     public Alojamento(Map<Integer, Quarto> quartosNoAlojamento, String nome) {

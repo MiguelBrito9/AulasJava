@@ -10,10 +10,10 @@ public class Pessoa{
     private int telefone=123;
     private static int cont = 0;
 
-    public Pessoa(String nome, int i, int telefone) {
+    public Pessoa(String nome, int idade, int telefone) {
         this.telefone = telefone;
         this.nome = nome;
-        idade = i;
+        this.idade = idade;
         cont++;
     }
 

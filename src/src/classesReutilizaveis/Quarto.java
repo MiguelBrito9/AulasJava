@@ -3,31 +3,39 @@ import java.util.ArrayList;
 
 public class Quarto {
 
-    public  ArrayList<Pessoa> hospedes = new ArrayList<>();
+    public  ArrayList<Pessoa> hospedes;
     public TiposDeQuarto tipoDoQuarto;
-    public boolean disponibilidade;
+    public boolean roomService = false;
 
-    public Quarto(ArrayList<Pessoa> hospedes, TiposDeQuarto tipoDoQuarto) {
-        this.hospedes = hospedes;
+    public Quarto(TiposDeQuarto tipoDoQuarto) {
+        this.hospedes = new ArrayList<Pessoa>();
         this.tipoDoQuarto = tipoDoQuarto;
-        this.disponibilidade = verificardisponibilidade();
     }
+
+
+
     public boolean verificardisponibilidade(){
-        if (hospedes.size()==0){
-            disponibilidade=true;
+        if (hospedes.isEmpty()){
+
             return true;
         }else {
-            disponibilidade=false;
+
             return false;
         }
     }
 
     @Override
     public String toString() {
+        String temRoomService;
+        if (roomService==true){
+            temRoomService="tem room service";
+        }else {
+            temRoomService="";
+        }
         return "Quarto{" +
                 "hospedes=" + hospedes +
                 ", tipoDoQuarto=" + tipoDoQuarto +
-                ", disponibilidade=" + disponibilidade +
+                " "+ temRoomService +
                 '}';
     }
 }
