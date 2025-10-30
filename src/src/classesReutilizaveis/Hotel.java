@@ -14,9 +14,9 @@ public class Hotel extends Alojamento {
     @Override
     public String toString() {
         return "Hotel{" +
+                " nome='" + nome + '\'' +
                 ", numDePiscinas=" + numDePiscinas +
                 ", listaDeQuartos=" + listaDeQuartos +
-                ", nome='" + nome + '\'' +
                 '}';
     }
 }

@@ -16,10 +16,10 @@ public class AlojamentoLocal extends Alojamento {
     @Override
     public String toString() {
         return "AlojamentoLocal{" +
-                "localizacao='" + localizacao + '\'' +
+                "nome='" + nome + '\'' +
+                ", localizacao='" + localizacao + '\'' +
                 ", tipoDeAlojamento=" + tipoDeAlojamento +
                 ", listaDeQuartos=" + listaDeQuartos +
-                ", nome='" + nome + '\'' +
                 '}';
     }
 }

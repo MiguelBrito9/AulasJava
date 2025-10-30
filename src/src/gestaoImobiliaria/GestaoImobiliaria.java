@@ -1,6 +1,8 @@
 package src.gestaoImobiliaria;
+import src.FuncoesAuxiliares;
 import src.classesReutilizaveis.*;
-
+import src.FuncoesAuxiliares.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +26,7 @@ public class GestaoImobiliaria {
             sc.nextLine();//clears the next line value of the next int
             switch (menuInput){
                 case 1:
-                    imobiliarios.add(criarAlojamento());
+                    criarAlojamento(imobiliarios);
                     break;
                 case 2:
                     verAlojamentos(imobiliarios);
@@ -41,7 +43,10 @@ public class GestaoImobiliaria {
                 case 6:
                     removerAlojamento(imobiliarios);
                     break;
+
             }
+            atualizarFicheiro(imobiliarios);
+
        }while (menuInput !=7);
     }
 
@@ -50,82 +55,17 @@ public class GestaoImobiliaria {
 
 
 
-    public static Alojamento criarAlojamento(){
-
-        AlojamentoLocal al = null;
-        int op=0;
-
-        System.out.println("Qual o nome do alojamento?");
-
-        String nome = sc.nextLine();
-
-        do {
-            System.out.println(
-                    "1 - Hotel \n" +
-                    "2 - Alojamento Local\n");
-            try{
-                op = sc.nextInt();
-                sc.nextLine();//clears the next line value of the next int
-            }catch (Exception e){
-                sc.nextLine();//clears the next line value of the next int
-            }
-        }while(op!=1 && op!=2);
-
-        int numDeQuartos=0;
-        HashMap<Integer,Quarto> quartos=new HashMap<>();
-
-        switch (op){
-            case(1)://hotel
+    public static void criarAlojamento(ArrayList <Alojamento> listaAlojamentos){
 
 
-
-                numDeQuartos = pedirInt("Quantos quartos são?",999);
-
-
-                boolean hasRoomService;
-
-                for (int n=1; n<=numDeQuartos; n++){
-                    int randomIndex = (int) (Math.random()*TiposDeQuarto.values().length);
-                    if(n%2==0){
-                      hasRoomService=false;
-                    }else {
-                        hasRoomService=true;
-                    }
-                    quartos.put(n, new Quarto(TiposDeQuarto.values()[randomIndex]));
-                    quartos.get(n).roomService=hasRoomService;
-                }
-
-                int nPiscinas = pedirInt("Quantas piscinas tem o hotel?",99);
-
-                Hotel hotel = new Hotel(quartos,nome,nPiscinas);
-
-                return hotel;
-            case(2)://alojamento local
-                numDeQuartos = pedirInt("Quantos quartos são?",999);
-
-
-                for (int n=1; n<=numDeQuartos; n++){
-                    quartos.put(n, new Quarto(TiposDeQuarto.standardRoom));
-                }
-
-
-                System.out.println("Qual a localização?");
-                String localizacao = sc.nextLine();
-
-                int tipoDeAlojamento = pedirInt(
-                        "Qual o tipo de alojamento?\n" +
-                        "1- Casa  \n" +
-                        "2- Apartamento \n",2);
-
-
-                if(tipoDeAlojamento==1){
-                    al = new AlojamentoLocal(quartos,nome,localizacao,TiposDeAlojamentoLocal.casa);
-
-                } else {
-                    al = new AlojamentoLocal(quartos,nome,localizacao,TiposDeAlojamentoLocal.apartamento);
-                }
+        int op=pedirInt("Como quer criar o alojamento?\n" +
+                "1-Manual\n" +
+                "2-Importar",2);
+        if(op==1){
+            criarAlojamentoManualmente(listaAlojamentos);
+        }else{
+            criarAlojamentoFicheiro(listaAlojamentos);
         }
-        return al;
     }
 
     public static void verAlojamentos(ArrayList <Alojamento> listaAlojamentos){

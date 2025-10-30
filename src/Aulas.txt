@@ -4,16 +4,17 @@ ciclos
 métodos
 classes
 arrayList
-
-------------------------------------------
 github
 try catch (error handling)
-tipos de dados genéricos
 heranca/polimorfismo em classes. ANIMAL, cao, gato (extends)
-------------------------------------------
-LocalDate
 Enums
+Map/Set
+tipos de dados genéricos
+ficheiros
+LocalDate
+------------------------------------------
+
+------------------------------------------
 comandos no terminal
 interfaces (implements)
 threads
-Map/Set

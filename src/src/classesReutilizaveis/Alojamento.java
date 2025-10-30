@@ -16,8 +16,8 @@ public class Alojamento {
     @Override
     public String toString() {
         return "Alojamento{" +
-                "listaDeQuartos=" + listaDeQuartos +
-                ", nome='" + nome + '\'' +
+                "nome='" + nome + '\'' +
+                ", listaDeQuartos=" + listaDeQuartos +
                 '}';
     }
 }
